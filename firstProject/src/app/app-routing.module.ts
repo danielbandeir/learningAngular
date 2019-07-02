@@ -4,8 +4,8 @@ import { HeroesListComponent } from 'src/app/components/heroes/heroes-list/heroe
 import { HeroesComponent } from './components/heroes/heroes.component';
 
 const routes: Routes = [
-  { path: 'list', component: HeroesListComponent },
-  { path: 'index', component: HeroesComponent }
+  { path: '', component: HeroesComponent },
+  { path: 'list', component: HeroesListComponent }
 ];
 
 @NgModule({
