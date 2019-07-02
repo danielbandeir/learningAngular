@@ -1,1 +1,9 @@
-<p>heroes-list works!</p>
+<div class="container">
+    <div *ngFor="let hero of this.HeroService.heroes" class="test">
+        <ul>
+            <li>
+                {{hero.id}} - {{hero.name}}
+            </li>
+        </ul>
+    </div>
+</div>
