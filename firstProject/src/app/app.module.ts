@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//Services
+import { HeroesService } from "./services/heroes.service";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
-import { HeroesEditComponent } from './heroes/heroes-edit/heroes-edit.component';
-import { HeroesDetailComponent } from './heroes/heroes-detail/heroes-detail.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list.component';
+import { HeroesEditComponent } from './components/heroes/heroes-edit/heroes-edit.component';
+import { HeroesDetailComponent } from './components/heroes/heroes-detail/heroes-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,7 @@ import { HeroesDetailComponent } from './heroes/heroes-detail/heroes-detail.comp
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [HeroesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

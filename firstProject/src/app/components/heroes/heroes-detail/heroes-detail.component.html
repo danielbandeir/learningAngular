@@ -1,0 +1,11 @@
+<div [ngClass]="'modal fade ' + this.classNam"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+          {{this.hero.name}}
+          <br>
+          <img src="{{this.hero.imagem}}" alt="" class="img-responsive">
+          <br>
+          {{this.hero.description}}
+      </div>
+    </div>
+</div>
