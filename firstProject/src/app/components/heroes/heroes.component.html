@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
             <div *ngFor="let hero of this.HeroService.heroes" class="col-lg-4 col-sm-6">
-                    {{hero.image}}
+                    <img [src]="hero.image" [alt]="hero.name" class="hero-image">
                     <br>
                     <div class="hero-name">
                         {{hero.name}}

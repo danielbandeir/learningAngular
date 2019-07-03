@@ -13,7 +13,6 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.HeroService.heroes);
   }
 
 }
