@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 //Services
-import { HeroesService } from "./services/heroes.service";
+import { HeroesService } from "src/app/core/services/heroes.service";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
