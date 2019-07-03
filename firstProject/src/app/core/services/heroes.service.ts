@@ -30,12 +30,13 @@ export class HeroesService {
   }
 
   getHeroById(id: number){
+    let heroToReturn: Heroes;
     this.heroes.forEach((hero)=>{
       if(hero.id == id){
-        console.log(hero);
-        return hero;
+        heroToReturn = hero;
       }
     });
+    return heroToReturn;
   }
 
   getHeroByName(name: String){
