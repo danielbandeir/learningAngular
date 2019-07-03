@@ -16,4 +16,7 @@ export class HeroesDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  showDialog(hero: String){
+    console.log('ola '+hero);
+  }
 }

@@ -1,11 +1,20 @@
-<div [ngClass]="'modal fade ' + this.classNam"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
+<div [ngClass]="'modal fade ' + this.classNam"  tabindex="1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
-          {{this.hero.name}}
-          <br>
-          <img src="{{this.hero.imagem}}" alt="" class="img-responsive">
-          <br>
-          {{this.hero.description}}
+        <div class="modal-header">
+            Nome: {{this.hero.name}}
+        </div>
+        <div class="modal-body">
+            <img [src]="this.hero.image" alt="" class="img-responsive img-heroes-detail">
+            <hr>
+            {{this.hero.description}}
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal">Fechar</button>
+          <button class="btn btn-outline-info" data-dismiss="modal" (click)="showDialog(this.hero.name)">
+            Editar
+          </button>
+        </div>
       </div>
     </div>
 </div>
