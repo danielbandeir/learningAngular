@@ -11,9 +11,9 @@
         </div>
         <div class="modal-footer">
           <button class="btn" data-dismiss="modal">Fechar</button>
-          <button class="btn btn-outline-info" data-dismiss="modal" (click)="showDialog(this.hero.name)">
+          <a [routerLink]="['/edit', this.hero.id]" routerLinkActive="router-link-active" class="btn btn-outline-info" data-dismiss="modal" (click)="showDialog(this.hero.name)">
             Editar
-          </button>
+          </a>
         </div>
       </div>
     </div>
