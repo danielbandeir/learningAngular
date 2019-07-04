@@ -10,12 +10,13 @@
         {{hero.description}}
     </div>
     <hr>
-        <Label for="heroName">Nome</Label>
-        <input type="text" id="heroName" class="form-control" [(ngModel)]="hero.name">
-        <Label for="heroImage">Link Imagem</Label>
-        <input type="text" id="heroImage" class="form-control" [ngModel]="hero.image">
-        <Label for="heroDescription">Descrição do Hero</Label>
-        <input type="text" id="heroDescription" class="form-control" [(ngModel)]="hero.description">
-        <button (click)="saveHeroDescription()" class="btn btn-outline-success">Salvar</button>
-        
+    <form [formGroup]="editHero" (ngSubmit)="onSubmit()">
+            <Label for="heroName">Nome</Label>
+            <input type="text" id="heroName" formControlName="heroName" class="form-control">
+            <Label for="heroImage">Link Imagem</Label>
+            <input type="text" id="heroImage" formControlName="heroImage" class="form-control">
+            <Label for="heroDescription">Descrição do Hero</Label>
+            <input type="text" id="heroDescription" formControlName="heroDescription" class="form-control">
+            <button [disabled]="!editHero.valid" class="btn btn-outline-success">Salvar</button>    
+    </form>
 </div>
