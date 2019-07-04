@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Services
 import { HeroesService } from "src/app/core/services/heroes.service";
@@ -24,7 +24,7 @@ import { HeroesAddComponent } from './components/heroes/heroes-add/heroes-add.co
     HeroesAddComponent,
   ],
   imports: [
-    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule
   ],
