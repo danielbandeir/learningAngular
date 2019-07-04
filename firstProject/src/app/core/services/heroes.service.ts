@@ -19,9 +19,9 @@ export class HeroesService {
     );
   }
 
-  addHero(id: number, name: String, image: String, description: String){
+  addHero(newHero: Heroes){
     this.heroes.push(
-      new Heroes(id, name, image, description)
+      newHero
     );
   }
 
@@ -51,11 +51,10 @@ export class HeroesService {
     return this.heroes.length;
   }
 
-  editHero(id: number, name: String, image: String, description: String){
+  editHero(heroEdited: Heroes){
     for(let i = 0; i<this.heroes.length; i++){
-      if(this.heroes[i].id == id){
-        this.heroes[i] == new Heroes(id, name, image, description);
-        break;
+      if(this.heroes[i].id == heroEdited.id){
+        this.heroes[i] == heroEdited;
       }
     }
   }
