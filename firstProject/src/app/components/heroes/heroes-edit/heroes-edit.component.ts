@@ -18,7 +18,11 @@ export class HeroesEditComponent implements OnInit {
 
   ngOnInit() {
     this.hero = this.heroes.getHeroById(Number(this.route.snapshot.paramMap.get('id')));
-    console.log(this.hero.name);
+  }
+
+  saveHeroDescription(){
+    this.heroes.editHero(this.hero);
+    alert('Editado com sucesso =D');
   }
 
 }
