@@ -1,1 +1,21 @@
-
+<div class="container">
+    <div class="heroImage">
+        <img [src]="hero.image" alt="">
+    </div>
+    <hr>
+    <div class="heroName">
+        {{hero.name}}
+    </div>
+    <div class="heroDescription">
+        {{hero.description}}
+    </div>
+    <hr>
+        <Label for="heroName">Nome</Label>
+        <input type="text" id="heroName" class="form-control" [(ngModel)]="hero.name">
+        <Label for="heroImage">Link Imagem</Label>
+        <input type="text" id="heroImage" class="form-control" [ngModel]="hero.image">
+        <Label for="heroDescription">Descrição do Hero</Label>
+        <input type="text" id="heroDescription" class="form-control" [(ngModel)]="hero.description">
+        <button (click)="saveHeroDescription()" class="btn btn-outline-success">Salvar</button>
+        
+</div>
