@@ -1,21 +1,23 @@
-<div class="modal fade addHero"  tabindex="1" role="dialog">
+<form [formGroup]="heroForm" (ngSubmit)="addHero()">
+  <div class="modal fade addHero"  tabindex="1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
             Add hero
         </div>
-        <div class="modal-body">
-            <Label for="heroName">Hero name</Label>
-            <input type="text" class="form-control" id="heroName" (ngModel)="hero.name">
-            <Label for="heroImage">Hero image</Label>
-            <input type="text" class="form-control" id="heroImage" (ngModel)="hero.image">
-            <Label for="heroDescription">Hero description</Label>
-            <input type="text" class="form-control" id="heroDescription" (ngModel)="hero.description">
-        </div>
-        <div class="modal-footer">
-          <button class="btn" data-dismiss="modal">Fechar</button>
-          <button class="btn btn-outline-success" (click)="addHero()" data-dismiss="modal">Salvar</button>
-        </div>
+          <div class="modal-body">
+              <Label for="heroName">Hero name</Label>
+              <input type="text" class="form-control" formControlName="heroName" id="heroName">
+              <Label for="heroImage">Hero image</Label>
+              <input type="text" class="form-control" formControlName="heroImage" id="heroImage">
+              <Label for="heroDescription">Hero description</Label>
+              <input type="text" class="form-control" formControlName="heroDescription" id="heroDescription">
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal">Fechar</button>
+            <input type="submit" class="btn btn-outline-success" data-dismiss="modal" value="Salvar">
+          </div>
       </div>
     </div>
-</div>
+  </div>
+</form>
