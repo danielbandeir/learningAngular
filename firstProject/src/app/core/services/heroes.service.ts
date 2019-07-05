@@ -45,10 +45,6 @@ export class HeroesService {
     });
   }
 
-  getCountOfHeroes(){
-    return this.heroes.length;
-  }
-
   editHero(heroEdited: Heroes){
     for(let i = 0; i<this.heroes.length; i++){
       if(this.heroes[i].id == heroEdited.id){
