@@ -8,14 +8,12 @@ import { FormGroup, FormControl } from '@angular/forms';
   selector: 'app-heroes-add',
   templateUrl: './heroes-add.component.html',
   styleUrls: ['./heroes-add.component.scss'],
-  providers: [HeroesService]
 })
 export class HeroesAddComponent implements OnInit {
 
   hero: Heroes;
 
   heroForm = new FormGroup({
-      //heroId : new FormControl(''),
       heroName : new FormControl(''),
       heroImage : new FormControl(''),
       heroDescription : new FormControl('')
@@ -27,15 +25,19 @@ export class HeroesAddComponent implements OnInit {
   ngOnInit() {
   }
 
+  resetForm(){
+    console.log(this.heroForm.value);
+    this.heroForm.reset;
+    console.log(this.heroForm.value);
+  }
+
   addHero(){
-    let getSize: Number;
+    // const { name, image, description } = this.heroForm.value;
+    // this.hero = new Heroes(name, image,);
     // this.hero.image = this.heroForm.get('heroImage').value;
     // this.hero.name = this.heroForm.get('heroName').value;
     // this.hero.description = this.heroForm.get('heroDescription').value;
-    // this.hero.id = Number(this.HeroService.getCountOfHeroes);
-    getSize = Number(this.HeroService.getCountOfHeroes);
-    this.heroForm.get('heroId').setValue(getSize);
-    this.hero = this.heroForm.value;
+    // this.hero.id = this.HeroService.getCountOfHeroes == null ? 0 : Number(this.HeroService.getCountOfHeroes);
     this.HeroService.addHero(this.hero);
     alert("Hero adicionado com sucesso =D");
     console.log(this.HeroService.getAllHeroes());
