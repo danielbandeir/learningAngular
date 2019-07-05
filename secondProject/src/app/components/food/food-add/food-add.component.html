@@ -1,1 +1,23 @@
-<p>food-add works!</p>
+<div class="modal fade" id="foodAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="foodAdd">Adicionar comida</h5>
+            </div>
+            <div class="modal-body">
+                <Form [formGroup]="foodAddForm">
+                    <Label for="foodName">Nome da comida</Label>
+                    <input type="text" formControlName="foodName" id="foodName" class="form-control">
+                    <Label for="foodName">Imagem da comida</Label>
+                    <input type="text" formControlName="foodImage" id="foodImage" class="form-control">
+                    <Label for="foodName">Preço da comida</Label>
+                    <input type="text" formControlName="foodPrice" id="foodPrice" class="form-control">
+                </Form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-outline-success" (click)="saveFood()" (keyup)="saveFood()" data-dismiss="modal">Salvar</button>
+            </div>
+          </div>
+        </div>
+</div>
