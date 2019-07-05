@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FoodService } from 'src/app/core/service/food.service';
 
@@ -21,6 +22,8 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { RequestAddComponent } from './components/requests/request-add/request-add.component';
 import { RequestListComponent } from './components/requests/request-list/request-list.component';
 import { RequestExcludeComponent } from './components/requests/request-exclude/request-exclude.component';
+import { ClientService } from './core/service/client.service';
+import { RequestsService } from './core/service/requests.service';
 
 @NgModule({
   declarations: [
@@ -44,9 +47,10 @@ import { RequestExcludeComponent } from './components/requests/request-exclude/r
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [FoodService],
+  providers: [FoodService, ClientService, RequestsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
