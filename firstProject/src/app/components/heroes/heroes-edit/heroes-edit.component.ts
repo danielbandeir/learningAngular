@@ -2,25 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { Heroes } from 'src/app/core/models/heroes.model';
 import { HeroesService } from 'src/app/core/services/heroes.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-heroes-edit',
   templateUrl: './heroes-edit.component.html',
   styleUrls: ['./heroes-edit.component.scss'],
-  providers: [HeroesService]
 })
 export class HeroesEditComponent implements OnInit {
 
   hero:Heroes;
 
-  editHero = new FormGroup({
-    heroName : new FormControl(''),
-    heroImage : new FormControl(''),
-    heroDescription : new FormControl('')
+  editHero = this.fb.group({
+    heroName : [''],
+    heroImage : [''],
+    heroDescription : ['']
   })
 
-  constructor(private heroes: HeroesService, private route: ActivatedRoute) { 
+  constructor(private heroes: HeroesService, private route: ActivatedRoute, private fb: FormBuilder) { 
   }
 
   ngOnInit() {
@@ -35,7 +34,6 @@ export class HeroesEditComponent implements OnInit {
 
     this.heroes.editHero(this.hero);
     alert('Editado com sucesso =D');
-  
   }
 
 }
