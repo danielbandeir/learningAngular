@@ -1,4 +1,4 @@
-<form [formGroup]="heroForm" (ngSubmit)="addHero()">
+<form [formGroup]="heroForm">
   <div class="modal fade addHero"  tabindex="1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -7,15 +7,16 @@
         </div>
           <div class="modal-body">
               <Label for="heroName">Hero name</Label>
-              <input type="text" class="form-control" formControlName="heroName" id="heroName">
+              <input type="text" class="form-control" formControlName="heroName" id="heroName" required>
               <Label for="heroImage">Hero image</Label>
-              <input type="text" class="form-control" formControlName="heroImage" id="heroImage">
+              <input type="text" class="form-control" formControlName="heroImage" id="heroImage" required>
               <Label for="heroDescription">Hero description</Label>
-              <input type="text" class="form-control" formControlName="heroDescription" id="heroDescription">
+              <input type="text" class="form-control" formControlName="heroDescription" id="heroDescription" required>
           </div>
           <div class="modal-footer">
             <button class="btn" data-dismiss="modal">Fechar</button>
-            <input type="submit" class="btn btn-outline-success" data-dismiss="modal" value="Salvar">
+            <button type="reset" class="btn btn-outline-warning" (click)="resetForm()">Resetar</button>
+            <button type="submit" class="btn btn-outline-success" data-dismiss="modal" (click)="addHero()" (keyup)="addHero()">Salvar</button>
           </div>
       </div>
     </div>
