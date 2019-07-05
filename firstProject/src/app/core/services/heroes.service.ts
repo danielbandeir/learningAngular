@@ -37,14 +37,6 @@ export class HeroesService {
     return heroToReturn;
   }
 
-  getHeroByName(name: String){
-    this.heroes.forEach((hero)=>{
-      if(hero.name == name){
-        return hero;
-      }
-    });
-  }
-
   editHero(heroEdited: Heroes){
     for(let i = 0; i<this.heroes.length; i++){
       if(this.heroes[i].id == heroEdited.id){

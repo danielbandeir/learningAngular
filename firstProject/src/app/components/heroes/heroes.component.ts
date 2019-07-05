@@ -9,11 +9,13 @@ import { Heroes } from 'src/app/core/models/heroes.model';
 })
 export class HeroesComponent implements OnInit {
 
+  heroes: Heroes[];
+
   constructor(private HeroService: HeroesService) { 
+    this.heroes = this.HeroService.heroes;
   }
 
   ngOnInit() {
-    console.log(this.HeroService.heroes);
   }
 
 }
