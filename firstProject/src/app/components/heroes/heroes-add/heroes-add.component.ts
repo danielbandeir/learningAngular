@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService } from 'src/app/core/services/heroes.service';
 import { Heroes } from 'src/app/core/models/heroes.model';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -13,34 +13,30 @@ export class HeroesAddComponent implements OnInit {
 
   hero: Heroes;
 
-  heroForm = new FormGroup({
-      heroName : new FormControl(''),
-      heroImage : new FormControl(''),
-      heroDescription : new FormControl('')
+  heroForm = this.fb.group({
+      heroId : [''],
+      heroName : [''],
+      heroImage : [''],
+      heroDescription : ['']
   });
 
-  constructor(private HeroService: HeroesService) {
+  constructor(private HeroService: HeroesService, private fb: FormBuilder) {
   }
 
   ngOnInit() {
   }
 
   resetForm(){
-    console.log(this.heroForm.value);
     this.heroForm.reset;
-    console.log(this.heroForm.value);
   }
 
   addHero(){
-    // const { name, image, description } = this.heroForm.value;
-    // this.hero = new Heroes(name, image,);
-    // this.hero.image = this.heroForm.get('heroImage').value;
-    // this.hero.name = this.heroForm.get('heroName').value;
-    // this.hero.description = this.heroForm.get('heroDescription').value;
-    // this.hero.id = this.HeroService.getCountOfHeroes == null ? 0 : Number(this.HeroService.getCountOfHeroes);
+    let idToHero: Number;
+    idToHero = this.HeroService.heroes.length;
+    this.hero = new Heroes(idToHero , this.heroForm.get('heroName').value, this.heroForm.get('heroImage').value, this.heroForm.get('heroDescription').value);
     this.HeroService.addHero(this.hero);
+    this.heroForm.reset;
     alert("Hero adicionado com sucesso =D");
-    console.log(this.HeroService.getAllHeroes());
   }
 
 }
