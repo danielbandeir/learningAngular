@@ -6,7 +6,6 @@ import { Heroes } from 'src/app/core/models/heroes.model';
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.scss'],
-  providers: [HeroesService]
 })
 export class HeroesComponent implements OnInit {
 
@@ -14,6 +13,7 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.HeroService.heroes);
   }
 
 }
