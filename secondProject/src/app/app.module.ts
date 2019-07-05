@@ -10,7 +10,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { ClientAddComponent } from './components/clients/client-add/client-add.component';
 import { ClientListComponent } from './components/clients/client-list/client-list.component';
-import { ClientListeditComponent } from './components/clients/client-listedit/client-listedit.component';
 import { ClientEditComponent } from './components/clients/client-edit/client-edit.component';
 import { FoodComponent } from './components/food/food.component';
 import { FoodAddComponent } from './components/food/food-add/food-add.component';
@@ -18,6 +17,10 @@ import { FoodListComponent } from './components/food/food-list/food-list.compone
 import { FoodEditComponent } from './components/food/food-edit/food-edit.component';
 import { FoodExcludeComponent } from './components/food/food-exclude/food-exclude.component';
 import { ClientDeleteComponent } from './components/clients/client-delete/client-delete.component';
+import { RequestsComponent } from './components/requests/requests.component';
+import { RequestAddComponent } from './components/requests/request-add/request-add.component';
+import { RequestListComponent } from './components/requests/request-list/request-list.component';
+import { RequestExcludeComponent } from './components/requests/request-exclude/request-exclude.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +30,17 @@ import { ClientDeleteComponent } from './components/clients/client-delete/client
     ClientsComponent,
     ClientAddComponent,
     ClientListComponent,
-    ClientListeditComponent,
     ClientEditComponent,
     FoodComponent,
     FoodAddComponent,
     FoodListComponent,
     FoodEditComponent,
     FoodExcludeComponent,
-    ClientDeleteComponent
+    ClientDeleteComponent,
+    RequestsComponent,
+    RequestAddComponent,
+    RequestListComponent,
+    RequestExcludeComponent
   ],
   imports: [
     BrowserModule,
