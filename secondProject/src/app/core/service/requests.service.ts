@@ -5,7 +5,7 @@ import { Request } from 'src/app/core/models/request.model';
     providedIn: 'root'
 })
 export class RequestsService{
-    
+    request: Request[] = []
 
     constructor(){
         
