@@ -1,7 +1,7 @@
-import { client } from './client.model';
-import { food } from './food.model';
+import { Client } from './client.model';
+import { Food } from './food.model';
 
-export class request{
-    clientName: client;
-    foodName: food;
+export class Request{
+    clientName: Client;
+    foodName: Food;
 }
