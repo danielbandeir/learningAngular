@@ -7,9 +7,9 @@ import { RequestsComponent } from './components/requests/requests.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: '/food', component: FoodComponent },
-  { path: '/clients', component: ClientsComponent },
-  { path: '/requests', component: RequestsComponent }
+  { path: 'food', component: FoodComponent },
+  { path: 'clients', component: ClientsComponent },
+  { path: 'requests', component: RequestsComponent }
 ];
 
 @NgModule({
