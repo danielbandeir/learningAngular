@@ -31,7 +31,7 @@ export class FoodService {
     }
   }
 
-  editFood(food: Food ) {
+  editFood(food: Food) {
     for (let i = 0; i < this.food.length; i++) {
       if (food.id === this.food[i].id) {
         this.food[i] = food;
