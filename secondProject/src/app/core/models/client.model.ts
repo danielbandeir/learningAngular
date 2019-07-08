@@ -1,10 +1,10 @@
-export class Client{
-    id: Number;
-    name: String;
-    requests: String;
-    totalRequests: String;
+export class Client {
+    id: number;
+    name: string;
+    requests: string;
+    totalRequests: string;
 
-    constructor(id: Number, name: String, requests: String, totalRequests: String){
+    constructor(id: number, name: string, requests: string, totalRequests: string) {
         this.id = id;
         this.name = name;
         this.requests = requests;

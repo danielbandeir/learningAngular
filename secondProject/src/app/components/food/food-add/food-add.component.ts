@@ -9,9 +9,10 @@ import { FoodService } from 'src/app/core/service/food.service';
   styleUrls: ['./food-add.component.scss']
 })
 export class FoodAddComponent implements OnInit {
+
   food: Food;
 
-  constructor(private fb: FormBuilder, private FoodService: FoodService) { }
+  constructor(private fb: FormBuilder, private foodService: FoodService) { }
 
   foodAddForm = this.fb.group({
     foodName : [''],
@@ -22,9 +23,12 @@ export class FoodAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveFood(){
-    this.food = new Food(this.FoodService.food.length, this.foodAddForm.get('foodName').value, this.foodAddForm.get('foodImage').value, this.foodAddForm.get('foodPrice').value);
-    this.FoodService.addFood(this.food);
+  saveFood() {
+    this.food = new Food(this.foodService.food.length,
+      this.foodAddForm.get('foodName').value,
+      this.foodAddForm.get('foodImage').value,
+      this.foodAddForm.get('foodPrice').value);
+    this.foodService.addFood(this.food);
   }
 
 }

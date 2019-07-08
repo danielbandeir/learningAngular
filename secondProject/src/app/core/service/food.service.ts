@@ -5,34 +5,35 @@ import { Food } from 'src/app/core/models/food.model';
   providedIn: 'root'
 })
 export class FoodService {
-  food: Food[] = []
+
+  food: Food[] = [];
 
   constructor() { }
 
-  checkIfHaveFood(){
-    if(this.food.length == 0){
+  checkIfHaveFood() {
+    if (this.food.length === 0) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 
-  addFood(food: Food){
+  addFood(food: Food) {
     return this.food.push(food);
   }
 
-  deleteFood(food: Food){
-    for(let i=0; i<this.food.length; i++){
-      if(food.id == this.food[i].id){
-        //need remove food
+  deleteFood(food: Food) {
+    for (let i = 0; i < this.food.length; i++) {
+      if (food.id === this.food[i].id) {
+        // need remove food
         this.food.splice(i, 1);
       }
     }
   }
 
-  editFood(food: Food){
-    for(let i=0; i<this.food.length;i++){
-      if(food.id==this.food[i].id){
+  editFood(food: Food ) {
+    for (let i = 0; i < this.food.length; i++) {
+      if (food.id === this.food[i].id) {
         this.food[i] = food;
       }
     }

@@ -4,36 +4,36 @@ import { Request } from 'src/app/core/models/request.model';
 @Injectable({
     providedIn: 'root'
 })
-export class RequestsService{
-    request: Request[] = []
+export class RequestsService {
 
-    constructor(){
-    }
+    request: Request[] = [];
 
-    checkIfHaveRequests(){
-    if(this.request.length == 0){
+    constructor() { }
+
+    checkIfHaveRequests() {
+    if (this.request.length === 0) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 
-  addRequest(request: Request){
+  addRequest(request: Request) {
     return this.request.push(request);
   }
 
-  deleteRequest(request: Request){
-    for(let i=0; i<this.request.length; i++){
-      if(request.id == this.request[i].id){
-        //need remove request
+  deleteRequest(request: Request) {
+    for (let i = 0; i < this.request.length; i++) {
+      if (request.id === this.request[i].id) {
+        // need remove request
         this.request.splice(i, 1);
       }
     }
   }
 
-  editRequest(request: Request){
-    for(let i=0; i<this.request.length;i++){
-      if(request.id==this.request[i].id){
+  editRequest(request: Request) {
+    for (let i = 0; i < this.request.length; i++) {
+      if (request.id === this.request[i].id) {
         this.request[i] = request;
       }
     }

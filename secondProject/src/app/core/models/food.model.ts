@@ -1,10 +1,10 @@
-export class Food{
-    id: Number;
-    name: String;
-    image: String;
-    price: String;
+export class Food {
+    id: number;
+    name: string;
+    image: string;
+    price: string;
 
-    constructor(id: Number, name: String, image: String, price: String){
+    constructor(id: number, name: string, image: string, price: string) {
         this.id = id;
         this.name = name;
         this.image = image;
