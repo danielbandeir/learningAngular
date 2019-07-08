@@ -26,17 +26,15 @@ export class HeroesAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  resetForm(){
-    this.heroForm.reset;
-  }
-
-  addHero(){
-    let idToHero: Number;
+  addHero() {
+    let idToHero: number;
     idToHero = this.HeroService.heroes.length;
-    this.hero = new Heroes(idToHero , this.heroForm.get('heroName').value, this.heroForm.get('heroImage').value, this.heroForm.get('heroDescription').value);
+    this.hero = new Heroes(idToHero,
+      this.heroForm.get('heroName').value,
+      this.heroForm.get('heroImage').value,
+      this.heroForm.get('heroDescription').value);
     this.HeroService.addHero(this.hero);
-    this.heroForm.reset;
-    alert("Hero adicionado com sucesso =D");
+    alert('Hero adicionado com sucesso =D');
   }
 
 }

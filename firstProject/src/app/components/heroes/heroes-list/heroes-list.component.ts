@@ -10,7 +10,7 @@ import { Heroes } from 'src/app/core/models/heroes.model';
 export class HeroesListComponent implements OnInit {
   heroes: Heroes[];
 
-  constructor(private HeroService: HeroesService) { 
+  constructor(private HeroService: HeroesService) {
     this.heroes = this.HeroService.heroes;
   }
 

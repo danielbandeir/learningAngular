@@ -11,29 +11,27 @@ import { FormBuilder } from '@angular/forms';
 })
 export class HeroesEditComponent implements OnInit {
 
-  hero:Heroes;
+  hero: Heroes;
 
   editHero = this.fb.group({
     heroName : [''],
     heroImage : [''],
     heroDescription : ['']
-  })
+  });
 
-  constructor(private heroes: HeroesService, private route: ActivatedRoute, private fb: FormBuilder) { 
-  }
+  constructor(private heroes: HeroesService, private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.hero = this.heroes.getHeroById(Number(this.route.snapshot.paramMap.get('id')));
   }
 
-  onSubmit(){
+  onSubmit() {
     this.hero.id = Number(this.route.snapshot.paramMap.get('id'));
     this.hero.description = this.editHero.get('heroDescription').value;
     this.hero.name = this.editHero.get('heroName').value;
     this.hero.image = this.editHero.get('heroImage').value;
 
     this.heroes.editHero(this.hero);
-    alert('Editado com sucesso =D');
   }
 
 }

@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
-//Services
-import { HeroesService } from "src/app/core/services/heroes.service";
+// Services
+import { HeroesService } from 'src/app/core/services/heroes.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

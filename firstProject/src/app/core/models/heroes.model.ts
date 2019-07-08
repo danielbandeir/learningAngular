@@ -1,10 +1,10 @@
-export class Heroes{
-    id: Number;
-    name: String;
-    image: String;
-    description: String;
+export class Heroes {
+    id: number;
+    name: string;
+    image: string;
+    description: string;
 
-    constructor(id: Number, name: String, image: String, description: String){
+    constructor(id: number, name: string, image: string, description: string) {
         this.id = id;
         this.name = name;
         this.image = image;

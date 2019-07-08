@@ -9,14 +9,10 @@ import { Heroes } from 'src/app/core/models/heroes.model';
 export class HeroesDetailComponent implements OnInit {
 
   @Input() hero: Heroes;
-  @Input() classNam: String;
+  @Input() classNam: string;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  showDialog(hero: String){
-    console.log('ola '+hero);
   }
 }
